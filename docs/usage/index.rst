@@ -29,6 +29,27 @@ ASCII Preview Only
 
    PYTHONPATH=src python -m gh_skyline --year 2024 --user JLSteenwyk --art-only
 
+Example Output (ASCII)
+----------------------
+
+Example terminal output from a generated skyline:
+
+.. code-block:: text
+
+    ╽╽╽       ╽╽╽       ╽╽╽       ╽╽╽       ╽╽╽       ╽
+   ╽▓▓▓╽╻╻┃┃┃╽▓▓▓╽╻╻┃┃┃╽▓▓▓╽╻╻┃┃┃╽▓▓▓╽╻╻┃┃┃╽▓▓▓╽╻╻┃┃┃╽▓
+   ▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒
+   ▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒
+   ▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒
+   ░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░
+   ░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░
+
+                           mona
+                           2024
+
+The same sample is tracked in the parity fixture:
+``testdata/parity/ascii/mona-2024.txt``.
+
 Output Naming
 -------------
 
