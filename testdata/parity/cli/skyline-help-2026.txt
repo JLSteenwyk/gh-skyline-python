@@ -1,0 +1,15 @@
+usage: skyline [-h] [-y YEAR] [-u USER] [-f] [-d] [-w] [-a] [-o OUTPUT]
+
+Generate a 3D model of a user's GitHub contribution history
+
+options:
+  -h, --help           show this help message and exit
+  -y, --year YEAR      Year or year range (e.g., 2024 or 2014-2024)
+  -u, --user USER      GitHub username (optional, defaults to authenticated
+                       user)
+  -f, --full           Generate contribution graph from join year to current
+                       year
+  -d, --debug          Enable debug logging
+  -w, --web            Open GitHub profile (authenticated or specified user).
+  -a, --art-only       Generate only ASCII preview
+  -o, --output OUTPUT  Output file path (optional)
