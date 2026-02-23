@@ -157,3 +157,20 @@ PYTHONPATH=src python -m pytest
 
 - Default output filename pattern: `{username}-{year|year-range}-github-skyline.stl`
 - If `--output` omits `.stl`, the extension is added automatically.
+
+## 3D Printing
+
+The generated `.stl` file is ready for standard 3D-print workflows.
+
+1. Import the STL into a slicer (`PrusaSlicer`, `Cura`, `Bambu Studio`, etc.).
+2. Orient the model flat on the build plate.
+3. Slice to `gcode` and print.
+
+Starter slicer settings:
+
+- Layer height: `0.20 mm`
+- Walls/perimeters: `2-3`
+- Top/bottom layers: `4-5`
+- Infill: `10-15%` (grid or gyroid)
+- Supports: `Off` (usually not needed)
+- Build plate adhesion: `Brim` if corners lift
