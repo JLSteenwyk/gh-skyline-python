@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/JLSteenwyk/gh-skyline-python">
-    <img src="src/gh_skyline/stl/geometry/assets/invertocat.png" alt="gh-skyline-python logo" width="180">
+    <img src="docs/assets/logo.png" alt="gh-skyline-python logo" width="180">
   </a>
   <p align="center">
     <a href="docs/MIGRATION_PLAN.md">Plan</a>
