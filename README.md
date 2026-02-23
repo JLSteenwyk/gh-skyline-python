@@ -36,6 +36,24 @@ Python-only MVP of GitHub Skyline generation.
 
 This project can fetch GitHub contribution history, render ASCII output, and generate an STL skyline.
 
+## Example Output (ASCII)
+
+```text
+╽╽╽       ╽╽╽       ╽╽╽       ╽╽╽       ╽╽╽       ╽
+╽▓▓▓╽╻╻┃┃┃╽▓▓▓╽╻╻┃┃┃╽▓▓▓╽╻╻┃┃┃╽▓▓▓╽╻╻┃┃┃╽▓▓▓╽╻╻┃┃┃╽▓
+▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒
+▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒
+▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒▒▒▓▓▓▓░░▒▒
+░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░
+░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░░▒▒▒▓▓▓▓░░
+```
+
+Run this to print an ASCII preview only:
+
+```bash
+PYTHONPATH=src python -m gh_skyline --year 2024 --user JLSteenwyk --art-only
+```
+
 ## Current Status
 
 ## Python-Only Workflow
