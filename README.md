@@ -1,8 +1,35 @@
+<p align="center">
+  <a href="https://github.com/JLSteenwyk/gh-skyline-python">
+    <img src="src/gh_skyline/stl/geometry/assets/invertocat.png" alt="gh-skyline-python logo" width="180">
+  </a>
+  <p align="center">
+    <a href="docs/MIGRATION_PLAN.md">Plan</a>
+    ·
+    <a href="https://github.com/JLSteenwyk/gh-skyline-python/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/JLSteenwyk/gh-skyline-python/issues">Request Feature</a>
+  </p>
+  <p align="center">
+    <a href="https://github.com/JLSteenwyk/gh-skyline-python/actions/workflows/python-ci.yml">
+      <img src="https://img.shields.io/github/actions/workflow/status/JLSteenwyk/gh-skyline-python/python-ci.yml?label=tests" alt="Tests">
+    </a>
+    <a href="https://github.com/JLSteenwyk/gh-skyline-python/actions/workflows/release-artifacts.yml">
+      <img src="https://img.shields.io/github/actions/workflow/status/JLSteenwyk/gh-skyline-python/release-artifacts.yml?label=release%20artifacts" alt="Release Artifacts">
+    </a>
+    <a href="https://github.com/JLSteenwyk/gh-skyline-python">
+      <img src="https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13-blue" alt="Python Versions">
+    </a>
+    <a href="https://github.com/JLSteenwyk/gh-skyline-python/graphs/contributors">
+      <img src="https://img.shields.io/github/contributors/JLSteenwyk/gh-skyline-python" alt="Contributors">
+    </a>
+  </p>
+</p>
+
 # gh-skyline-python
 
 Python-only MVP of GitHub Skyline generation.
 
-This project can fetch GitHub contribution history, render ASCII output, and generate an STL skyline (base + columns).
+This project can fetch GitHub contribution history, render ASCII output, and generate an STL skyline.
 
 ## Current Status
 
@@ -11,10 +38,9 @@ This project can fetch GitHub contribution history, render ASCII output, and gen
 This project does not require Go for development, testing, or fixture generation.
 All parity artifacts and tests are generated/validated using Python tooling in this repo.
 
-
 - MVP: ready for local skyline generation
-- Test status: `44 passed`
-- Not complete yet: text/logo STL geometry parity and final extension packaging cutover
+- Test status: `52 passed`
+- Not complete yet: final parity tuning and release cutover polish
 
 See migration tracking in:
 
@@ -36,8 +62,7 @@ cd gh-skyline-python
 python3 -m venv venv
 source venv/bin/activate
 pip install -U pip
-pip install -e .
-pip install pytest pyyaml
+pip install -e .[dev]
 ```
 
 ## Usage
