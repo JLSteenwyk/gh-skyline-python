@@ -1,10 +1,16 @@
 # gh-skyline-python
 
-Python MVP of GitHub Skyline generation.
+Python-only MVP of GitHub Skyline generation.
 
 This project can fetch GitHub contribution history, render ASCII output, and generate an STL skyline (base + columns).
 
 ## Current Status
+
+## Python-Only Workflow
+
+This project does not require Go for development, testing, or fixture generation.
+All parity artifacts and tests are generated/validated using Python tooling in this repo.
+
 
 - MVP: ready for local skyline generation
 - Test status: `44 passed`

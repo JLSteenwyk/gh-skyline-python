@@ -12,14 +12,14 @@
 2. `PYTHONPATH=src python -m gh_skyline --year 2024 --user <user> --output smoke-skyline`
 3. Verify `smoke-skyline.stl` exists and opens in an STL viewer.
 
-## Go Parity Artifact Import (when available)
-1. Export Go artifacts into a folder with subdirs: `ascii/`, `stl/`, `graphql/`, `cli/` and optional `cases.yaml`.
+## Parity Artifact Import (Optional)
+1. Prepare artifact folder with subdirs: `ascii/`, `stl/`, `graphql/`, `cli/` and optional `cases.yaml`.
 2. Import artifacts:
-   - `python tools/import_go_parity_artifacts.py /path/to/go_artifacts`
+   - `python tools/import_parity_artifacts.py /path/to/artifacts`
 3. Run parity tests:
    - `PYTHONPATH=src ./venv/bin/python -m pytest tests/parity -q`
 
 ## Current Gaps Before Cutover
-1. Import and validate richer Go-exported artifact corpus across scenarios.
-2. Add CI workflow for release artifact validation.
+1. Expand and tune artifact corpus across multiple real-world scenarios.
+2. Add release artifact validation workflow.
 3. Add performance budget checks for geometry generation.

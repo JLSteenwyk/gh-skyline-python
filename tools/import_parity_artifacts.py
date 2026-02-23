@@ -1,4 +1,4 @@
-"""Import Go-generated parity artifacts into testdata/parity.
+"""Import externally generated parity artifacts into testdata/parity.
 
 Expected source layout:
   <src>/ascii/*.txt
@@ -6,6 +6,8 @@ Expected source layout:
   <src>/graphql/*.json
   <src>/cli/*.txt
   <src>/cases.yaml   (optional)
+
+This workflow is toolchain-agnostic and does not require Go.
 """
 
 from __future__ import annotations
@@ -31,8 +33,8 @@ def _copy_tree_if_exists(src_dir: Path, dst_dir: Path, pattern: str) -> int:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Import Go parity artifacts")
-    parser.add_argument("src", help="Path to Go artifact export directory")
+    parser = argparse.ArgumentParser(description="Import parity artifacts")
+    parser.add_argument("src", help="Path to artifact directory")
     args = parser.parse_args()
 
     src_root = Path(args.src).resolve()

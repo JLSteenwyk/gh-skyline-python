@@ -47,7 +47,7 @@ def generate_join_year_fixture(username: str = "mona", join_year: int = 2011) ->
 
 
 def generate_contributions_fixture(username: str, year: int) -> None:
-    # Mirrors gh-skyline/internal/testutil/fixtures/github.go generation pattern.
+    # Deterministic weekly/day contribution fixture pattern for parity checks.
     start = datetime(year, 1, 1, tzinfo=UTC)
     weeks: list[dict[str, object]] = []
     total = 0
