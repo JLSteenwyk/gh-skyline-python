@@ -12,6 +12,18 @@
 2. `./venv/bin/python -m build`
 3. `./venv/bin/python -m twine check dist/*`
 
+## Publish to PyPI (Manual)
+1. `source venv/bin/activate`
+2. `./venv/bin/pip install -U build twine`
+3. `rm -rf dist build *.egg-info`
+4. `./venv/bin/python setup.py sdist bdist_wheel`
+5. `./venv/bin/python -m twine check dist/*`
+6. `./venv/bin/python -m twine upload dist/* -r pypi`
+7. Optional shortcut: `./scripts/publish_pypi.sh`
+
+Notes:
+- Skip `--universal`; this project supports Python 3.11+ only.
+
 ## Docs Build Locally
 1. `./venv/bin/pip install -r docs/requirements.txt`
 2. `./venv/bin/sphinx-build -W -b html docs docs/_build/html`
@@ -31,9 +43,17 @@
 ## CI/Release Automation
 1. `Python CI` workflow runs package smoke + tests on push/PR.
 2. `Release Artifacts` workflow builds and uploads `sdist` + `wheel` on tag push (`v*`) or manual dispatch.
-3. `Docs Pages` workflow builds and deploys docs to GitHub Pages.
+3. On `v*` tags, `Release Artifacts` also publishes to PyPI via Trusted Publishing (OIDC).
+4. `Docs Pages` workflow builds and deploys docs to GitHub Pages.
+
+## One-Time PyPI Trusted Publisher Setup
+1. In PyPI, open project settings for `gh-skyline-python`.
+2. Add Trusted Publisher:
+   - Owner: `JLSteenwyk`
+   - Repository: `gh-skyline-python`
+   - Workflow: `release-artifacts.yml`
+3. Push a `v*` tag (for example, `v0.1.0`) to trigger publish.
 
 ## Current Gaps Before Final Cutover
 1. Expand and tune artifact corpus across multiple real-world scenarios.
 2. Add performance budget checks for geometry generation.
-3. Optionally add automated PyPI publish job gated on release tags.

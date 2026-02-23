@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gh-skyline-python"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python MVP for generating GitHub Skyline STL models"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -14,12 +14,15 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
+  "build>=1.2.0",
   "pytest>=9.0.0",
   "pyyaml>=6.0.0",
+  "twine>=5.0.0",
 ]
 
 [project.scripts]
 gh-skyline = "gh_skyline.__main__:main"
+skyline = "gh_skyline.__main__:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
