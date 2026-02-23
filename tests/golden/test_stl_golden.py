@@ -14,4 +14,5 @@ def test_stl_fixture_has_valid_header_and_count() -> None:
     triangle_count = struct.unpack("<I", data[80:84])[0]
 
     assert header.startswith(HEADER_TEXT.encode("utf-8"))
-    assert triangle_count == 0
+    assert triangle_count > 0
+    assert len(data) == 84 + (triangle_count * 50)
