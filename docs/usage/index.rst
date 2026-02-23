@@ -50,6 +50,18 @@ Example terminal output from a generated skyline:
 The same sample is tracked in the parity fixture:
 ``testdata/parity/ascii/mona-2024.txt``.
 
+ASCII Key
+---------
+
+- ``╽`` high activity at column top
+- ``┃`` medium activity at column top
+- ``╻`` low activity at column top
+- ``▓`` high activity in middle/base blocks
+- ``▒`` medium activity in middle/base blocks
+- ``░`` low activity in middle/base blocks
+- ``.`` future dates (not yet reached)
+- ``<space>`` zero contributions
+
 Output Naming
 -------------
 

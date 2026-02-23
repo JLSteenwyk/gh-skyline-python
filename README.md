@@ -53,6 +53,17 @@ Run this to print an ASCII preview only:
 PYTHONPATH=src python -m gh_skyline --year 2024 --user JLSteenwyk --art-only
 ```
 
+### ASCII Key
+
+- `╽` high activity at column top
+- `┃` medium activity at column top
+- `╻` low activity at column top
+- `▓` high activity in middle/base blocks
+- `▒` medium activity in middle/base blocks
+- `░` low activity in middle/base blocks
+- `.` future dates (not yet reached)
+- `<space>` zero contributions
+
 ## Current Status
 
 ## Python-Only Workflow
