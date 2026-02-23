@@ -5,6 +5,7 @@ from __future__ import annotations
 from gh_skyline.models.types import ContributionDay
 from gh_skyline.stl.geometry.geometry import calculate_multi_year_dimensions, create_contribution_geometry
 from gh_skyline.stl.geometry.shapes import create_cuboid_base
+from gh_skyline.stl.geometry.text import create_3d_text, generate_logo_geometry, year_label
 from gh_skyline.stl.writer import Triangle, write_stl_binary
 
 
@@ -28,6 +29,9 @@ def _find_max_contributions_across_years(contributions_per_year: list[list[list[
 
 def _generate_model_geometry(
     contributions_per_year: list[list[list[ContributionDay]]],
+    username: str,
+    start_year: int,
+    end_year: int,
 ) -> list[Triangle]:
     if not contributions_per_year:
         raise ValueError("contributions data cannot be empty")
@@ -37,12 +41,15 @@ def _generate_model_geometry(
 
     triangles: list[Triangle] = []
 
-    # Deterministic component ordering: base then columns.
+    # Deterministic component ordering: base -> columns -> text -> logo.
     triangles.extend(create_cuboid_base(width, depth))
 
     for i in range(len(contributions_per_year) - 1, -1, -1):
         year_offset = len(contributions_per_year) - 1 - i
         triangles.extend(create_contribution_geometry(contributions_per_year[i], year_offset, max_contrib))
+
+    triangles.extend(create_3d_text(username, year_label(start_year, end_year), width, 10.0))
+    triangles.extend(generate_logo_geometry(width, 10.0))
 
     return triangles
 
@@ -70,5 +77,5 @@ def generate_stl_range(
     if not username:
         raise ValueError("username cannot be empty")
 
-    triangles = _generate_model_geometry(contributions_per_year)
+    triangles = _generate_model_geometry(contributions_per_year, username, start_year, end_year)
     write_stl_binary(output_path, triangles)

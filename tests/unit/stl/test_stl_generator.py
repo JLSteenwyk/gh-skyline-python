@@ -24,3 +24,10 @@ def test_generate_stl_range_writes_file(tmp_path: Path) -> None:
     generate_stl_range([_small_grid()], str(out), "mona", 2024, 2024)
     assert out.exists()
     assert out.stat().st_size > 84
+
+
+def test_generate_stl_range_text_logo_increase_size(tmp_path: Path) -> None:
+    out = tmp_path / "model.stl"
+    generate_stl_range([_small_grid()], str(out), "mona", 2024, 2024)
+    # Ensure file size reflects more than tiny minimal geometry.
+    assert out.stat().st_size > 5000
