@@ -14,12 +14,34 @@ Requirements
 Installation
 ------------
 
+From PyPI (recommended for users):
+
+.. code-block:: shell
+
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -U pip
+   pip install gh-skyline-python
+
+From source (recommended for contributors):
+
 .. code-block:: shell
 
    python3 -m venv venv
    source venv/bin/activate
    pip install -U pip
    pip install -e .[dev]
+
+CLI Check
+---------
+
+After installation, verify the CLI:
+
+.. code-block:: shell
+
+   skyline --help
+
+Both ``skyline`` and ``gh-skyline`` are available as command names.
 
 Authentication
 --------------

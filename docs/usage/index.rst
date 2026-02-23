@@ -1,33 +1,54 @@
 Usage
 =====
 
+CLI
+---
+
+Primary command:
+
+.. code-block:: shell
+
+   skyline --help
+
+Alternative command alias:
+
+.. code-block:: shell
+
+   gh-skyline --help
+
+You can also run as a module during local development:
+
+.. code-block:: shell
+
+   PYTHONPATH=src python -m gh_skyline --help
+
 Single Year
 -----------
 
 .. code-block:: shell
 
-   PYTHONPATH=src python -m gh_skyline --year 2024 --user JLSteenwyk --output my-skyline
+   skyline --year 2024 --user JLSteenwyk --output my-skyline
 
 Multiple Years
 --------------
 
 .. code-block:: shell
 
-   PYTHONPATH=src python -m gh_skyline --year 2019-2024 --user JLSteenwyk --output my-skyline
+   skyline --year 2019-2024 --user JLSteenwyk --output my-skyline
 
 Full History
 ------------
 
 .. code-block:: shell
 
-   PYTHONPATH=src python -m gh_skyline --full --user JLSteenwyk --output my-skyline
+   skyline --full --user JLSteenwyk --output my-skyline
 
 ASCII Preview Only
 ------------------
 
 .. code-block:: shell
 
-   PYTHONPATH=src python -m gh_skyline --year 2024 --user JLSteenwyk --art-only
+   skyline --year 2024 --user JLSteenwyk --art-only
 
 Example Output (ASCII)
 ----------------------

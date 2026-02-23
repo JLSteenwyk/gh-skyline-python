@@ -18,11 +18,11 @@ Quick Start
 
 .. code-block:: shell
 
-   # install in editable mode
-   pip install -e .[dev]
+   # install from PyPI
+   pip install gh-skyline-python
 
-   # generate skyline for a user/year
-   PYTHONPATH=src python -m gh_skyline --year 2024 --user JLSteenwyk --output my-skyline
+   # generate skyline for a user/year via CLI
+   skyline --year 2024 --user JLSteenwyk --output my-skyline
 
 Documentation Structure
 -----------------------
