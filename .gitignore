@@ -32,3 +32,6 @@ htmlcov/
 
 # Generated outputs
 *.stl
+
+# Sphinx build output
+docs/_build/

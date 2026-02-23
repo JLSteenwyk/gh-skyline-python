@@ -1,0 +1,12 @@
+/* Lightweight docs polish aligned with project branding */
+.wy-side-nav-search {
+  background: linear-gradient(180deg, #2f69ff 0%, #1f4ed8 100%);
+}
+
+.wy-nav-content {
+  max-width: 980px;
+}
+
+.rst-content code.literal {
+  color: #1f4ed8;
+}

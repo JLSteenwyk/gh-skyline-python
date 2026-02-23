@@ -26,7 +26,8 @@
 ## Completed This Update
 - Added release artifact workflow: `.github/workflows/release-artifacts.yml`.
 - Workflow now builds `sdist` and `wheel`, runs `twine check`, and uploads artifacts.
-- Updated release checklist with local artifact build/validation commands.
+- Added docs publishing workflow: `.github/workflows/docs-pages.yml` for GitHub Pages deployment.
+- Updated release checklist with docs build + publishing steps.
 
 ## Verification
 - Local package smoke test: `./scripts/package_smoke_test.sh`.

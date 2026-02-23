@@ -30,9 +30,13 @@ jobs:
         run: |
           ./venv/bin/pip install --upgrade pip
           ./venv/bin/pip install -e .[dev]
+          ./venv/bin/pip install -r docs/requirements.txt
 
       - name: Package smoke test
         run: ./scripts/package_smoke_test.sh
 
       - name: Run tests
         run: PYTHONPATH=src ./venv/bin/python -m pytest
+
+      - name: Build docs
+        run: ./venv/bin/sphinx-build -W -b html docs docs/_build/html

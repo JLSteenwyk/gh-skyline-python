@@ -3,6 +3,8 @@
     <img src="docs/assets/logo.png" alt="gh-skyline-python logo" width="180">
   </a>
   <p align="center">
+    <a href="https://jlsteenwyk.github.io/gh-skyline-python/">Docs</a>
+    ·
     <a href="docs/MIGRATION_PLAN.md">Plan</a>
     ·
     <a href="https://github.com/JLSteenwyk/gh-skyline-python/issues">Report Bug</a>
@@ -15,6 +17,9 @@
     </a>
     <a href="https://github.com/JLSteenwyk/gh-skyline-python/actions/workflows/release-artifacts.yml">
       <img src="https://img.shields.io/github/actions/workflow/status/JLSteenwyk/gh-skyline-python/release-artifacts.yml?label=release%20artifacts" alt="Release Artifacts">
+    </a>
+    <a href="https://github.com/JLSteenwyk/gh-skyline-python/actions/workflows/docs-pages.yml">
+      <img src="https://img.shields.io/github/actions/workflow/status/JLSteenwyk/gh-skyline-python/docs-pages.yml?label=docs" alt="Docs">
     </a>
     <a href="https://github.com/JLSteenwyk/gh-skyline-python">
       <img src="https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13-blue" alt="Python Versions">
