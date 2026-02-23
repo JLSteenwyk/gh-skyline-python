@@ -16,6 +16,11 @@ def test_create_3d_text_non_empty() -> None:
     assert len(tris) > 0
 
 
+def test_create_3d_text_empty_username_uses_fallback() -> None:
+    tris = create_3d_text("", "2024", 140.0, 10.0)
+    assert len(tris) > 0
+
+
 def test_generate_logo_geometry_non_empty() -> None:
     tris = generate_logo_geometry(140.0, 10.0)
     assert len(tris) > 0
