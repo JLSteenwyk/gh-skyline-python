@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/JLSteenwyk/gh-skyline-python">
-    <img src="docs/assets/logo.png" alt="gh-skyline-python logo" width="180">
+    <img src="docs/_static/img/logo.png" alt="gh-skyline-python logo" width="180">
   </a>
   <p align="center">
     <a href="https://jlsteenwyk.github.io/gh-skyline-python/">Docs</a>
