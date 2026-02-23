@@ -1,0 +1,49 @@
+name: Release Artifacts
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Create venv
+        run: python -m venv venv
+
+      - name: Install dependencies
+        run: |
+          ./venv/bin/pip install --upgrade pip
+          ./venv/bin/pip install -e .[dev]
+          ./venv/bin/pip install build twine
+
+      - name: Package smoke test
+        run: ./scripts/package_smoke_test.sh
+
+      - name: Run tests
+        run: PYTHONPATH=src ./venv/bin/python -m pytest
+
+      - name: Build sdist and wheel
+        run: ./venv/bin/python -m build
+
+      - name: Validate package metadata
+        run: ./venv/bin/python -m twine check dist/*
+
+      - name: Upload distribution artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gh-skyline-python-dist
+          path: dist/*
+          if-no-files-found: error

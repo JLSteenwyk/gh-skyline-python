@@ -7,6 +7,11 @@
 ## Core Test Suite
 1. `PYTHONPATH=src ./venv/bin/python -m pytest`
 
+## Build Artifacts Locally
+1. `./venv/bin/pip install build twine`
+2. `./venv/bin/python -m build`
+3. `./venv/bin/python -m twine check dist/*`
+
 ## Manual Runtime Check
 1. `export GITHUB_TOKEN=...` (or ensure `gh` is installed and authenticated)
 2. `PYTHONPATH=src python -m gh_skyline --year 2024 --user <user> --output smoke-skyline`
@@ -19,7 +24,11 @@
 3. Run parity tests:
    - `PYTHONPATH=src ./venv/bin/python -m pytest tests/parity -q`
 
-## Current Gaps Before Cutover
+## CI/Release Automation
+1. `Python CI` workflow runs package smoke + tests on push/PR.
+2. `Release Artifacts` workflow builds and uploads `sdist` + `wheel` on tag push (`v*`) or manual dispatch.
+
+## Current Gaps Before Final Cutover
 1. Expand and tune artifact corpus across multiple real-world scenarios.
-2. Add release artifact validation workflow.
-3. Add performance budget checks for geometry generation.
+2. Add performance budget checks for geometry generation.
+3. Optionally add automated PyPI publish job gated on release tags.

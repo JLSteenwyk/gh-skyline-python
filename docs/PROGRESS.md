@@ -3,7 +3,7 @@
 ## Snapshot
 - Date: 2026-02-23
 - Status: MVP achieved
-- Current milestone: M6 started
+- Current milestone: M6 in progress
 
 ## Milestone Checklist
 - [x] M0 - Parity Harness and Fixture Contract (fixture corpus and fixture-consuming tests)
@@ -12,7 +12,7 @@
 - [~] M3 - ASCII Parity (implemented with golden tests; tuning remains)
 - [~] M4 - STL Core Parity (implemented with deterministic geometry + raster text/logo; tuning remains)
 - [x] M5 - GitHub Data + Full Skyline Flow (implemented)
-- [~] M6 - Packaging and Extension Cutover (packaging + smoke checks + CI added; release artifact flow pending)
+- [~] M6 - Packaging and Extension Cutover (packaging + smoke checks + CI + release artifact workflow added)
 
 ## MVP Definition
 - CLI can fetch contribution history via `gh` adapter or token fallback.
@@ -21,13 +21,12 @@
 
 ## MVP Status
 - Achieved in current branch.
-- Remaining non-MVP work: parity tuning and release artifact workflow.
+- Remaining non-MVP work: parity tuning and performance budget enforcement.
 
 ## Completed This Update
-- Removed Go-dependent parity workflow requirements from docs and process.
-- Added generic parity import script: `tools/import_parity_artifacts.py`.
-- Removed Go-specific import script.
-- Kept fixture generation and validation fully Python-based.
+- Added release artifact workflow: `.github/workflows/release-artifacts.yml`.
+- Workflow now builds `sdist` and `wheel`, runs `twine check`, and uploads artifacts.
+- Updated release checklist with local artifact build/validation commands.
 
 ## Verification
 - Local package smoke test: `./scripts/package_smoke_test.sh`.
@@ -35,6 +34,5 @@
 
 ## Next Tasks
 1. Expand parity artifacts with additional real-world scenarios.
-2. Add release artifact workflow for distribution.
-3. Define and enforce performance budget checks for geometry generation.
-4. Tune raster geometry constants against artifact baselines.
+2. Define and enforce performance budget checks for geometry generation.
+3. Optionally add automated publish flow for tagged releases.
